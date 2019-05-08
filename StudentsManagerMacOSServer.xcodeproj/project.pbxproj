@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC778E652283184A00C51EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778E642283184A00C51EED /* AppDelegate.swift */; };
-		CC778E672283184A00C51EED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778E662283184A00C51EED /* ViewController.swift */; };
-		CC778E692283184F00C51EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC778E682283184F00C51EED /* Assets.xcassets */; };
-		CC778E6C2283184F00C51EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC778E6A2283184F00C51EED /* Main.storyboard */; };
+		CC778E8122831B2900C51EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778E8022831B2900C51EED /* AppDelegate.swift */; };
+		CC778E8322831B2900C51EED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778E8222831B2900C51EED /* ViewController.swift */; };
+		CC778E8522831B2B00C51EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC778E8422831B2B00C51EED /* Assets.xcassets */; };
+		CC778E8822831B2B00C51EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC778E8622831B2B00C51EED /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC778E612283184A00C51EED /* StudentsManagerMacOSServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentsManagerMacOSServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC778E642283184A00C51EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC778E662283184A00C51EED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC778E682283184F00C51EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC778E6B2283184F00C51EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CC778E6D2283184F00C51EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC778E6E2283184F00C51EED /* StudentsManagerMacOSServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudentsManagerMacOSServer.entitlements; sourceTree = "<group>"; };
+		CC778E7D22831B2900C51EED /* StudentsManagerMacOSServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentsManagerMacOSServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC778E8022831B2900C51EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC778E8222831B2900C51EED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC778E8422831B2B00C51EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC778E8722831B2B00C51EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC778E8922831B2B00C51EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC778E8A22831B2B00C51EED /* StudentsManagerMacOSServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudentsManagerMacOSServer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CC778E5E2283184A00C51EED /* Frameworks */ = {
+		CC778E7A22831B2900C51EED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,31 +34,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CC778E582283184A00C51EED = {
+		CC778E7422831B2900C51EED = {
 			isa = PBXGroup;
 			children = (
-				CC778E632283184A00C51EED /* StudentsManagerMacOSServer */,
-				CC778E622283184A00C51EED /* Products */,
+				CC778E7F22831B2900C51EED /* StudentsManagerMacOSServer */,
+				CC778E7E22831B2900C51EED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CC778E622283184A00C51EED /* Products */ = {
+		CC778E7E22831B2900C51EED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC778E612283184A00C51EED /* StudentsManagerMacOSServer.app */,
+				CC778E7D22831B2900C51EED /* StudentsManagerMacOSServer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC778E632283184A00C51EED /* StudentsManagerMacOSServer */ = {
+		CC778E7F22831B2900C51EED /* StudentsManagerMacOSServer */ = {
 			isa = PBXGroup;
 			children = (
-				CC778E642283184A00C51EED /* AppDelegate.swift */,
-				CC778E662283184A00C51EED /* ViewController.swift */,
-				CC778E682283184F00C51EED /* Assets.xcassets */,
-				CC778E6A2283184F00C51EED /* Main.storyboard */,
-				CC778E6D2283184F00C51EED /* Info.plist */,
-				CC778E6E2283184F00C51EED /* StudentsManagerMacOSServer.entitlements */,
+				CC778E8022831B2900C51EED /* AppDelegate.swift */,
+				CC778E8222831B2900C51EED /* ViewController.swift */,
+				CC778E8422831B2B00C51EED /* Assets.xcassets */,
+				CC778E8622831B2B00C51EED /* Main.storyboard */,
+				CC778E8922831B2B00C51EED /* Info.plist */,
+				CC778E8A22831B2B00C51EED /* StudentsManagerMacOSServer.entitlements */,
 			);
 			path = StudentsManagerMacOSServer;
 			sourceTree = "<group>";
@@ -66,13 +66,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CC778E602283184A00C51EED /* StudentsManagerMacOSServer */ = {
+		CC778E7C22831B2900C51EED /* StudentsManagerMacOSServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC778E712283184F00C51EED /* Build configuration list for PBXNativeTarget "StudentsManagerMacOSServer" */;
+			buildConfigurationList = CC778E8D22831B2B00C51EED /* Build configuration list for PBXNativeTarget "StudentsManagerMacOSServer" */;
 			buildPhases = (
-				CC778E5D2283184A00C51EED /* Sources */,
-				CC778E5E2283184A00C51EED /* Frameworks */,
-				CC778E5F2283184A00C51EED /* Resources */,
+				CC778E7922831B2900C51EED /* Sources */,
+				CC778E7A22831B2900C51EED /* Frameworks */,
+				CC778E7B22831B2900C51EED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -80,20 +80,20 @@
 			);
 			name = StudentsManagerMacOSServer;
 			productName = StudentsManagerMacOSServer;
-			productReference = CC778E612283184A00C51EED /* StudentsManagerMacOSServer.app */;
+			productReference = CC778E7D22831B2900C51EED /* StudentsManagerMacOSServer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CC778E592283184A00C51EED /* Project object */ = {
+		CC778E7522831B2900C51EED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = TeamUUUU;
 				TargetAttributes = {
-					CC778E602283184A00C51EED = {
+					CC778E7C22831B2900C51EED = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CC778E5C2283184A00C51EED /* Build configuration list for PBXProject "StudentsManagerMacOSServer" */;
+			buildConfigurationList = CC778E7822831B2900C51EED /* Build configuration list for PBXProject "StudentsManagerMacOSServer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,45 +111,45 @@
 				en,
 				Base,
 			);
-			mainGroup = CC778E582283184A00C51EED;
-			productRefGroup = CC778E622283184A00C51EED /* Products */;
+			mainGroup = CC778E7422831B2900C51EED;
+			productRefGroup = CC778E7E22831B2900C51EED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC778E602283184A00C51EED /* StudentsManagerMacOSServer */,
+				CC778E7C22831B2900C51EED /* StudentsManagerMacOSServer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CC778E5F2283184A00C51EED /* Resources */ = {
+		CC778E7B22831B2900C51EED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC778E692283184F00C51EED /* Assets.xcassets in Resources */,
-				CC778E6C2283184F00C51EED /* Main.storyboard in Resources */,
+				CC778E8522831B2B00C51EED /* Assets.xcassets in Resources */,
+				CC778E8822831B2B00C51EED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CC778E5D2283184A00C51EED /* Sources */ = {
+		CC778E7922831B2900C51EED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC778E672283184A00C51EED /* ViewController.swift in Sources */,
-				CC778E652283184A00C51EED /* AppDelegate.swift in Sources */,
+				CC778E8322831B2900C51EED /* ViewController.swift in Sources */,
+				CC778E8122831B2900C51EED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC778E6A2283184F00C51EED /* Main.storyboard */ = {
+		CC778E8622831B2B00C51EED /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CC778E6B2283184F00C51EED /* Base */,
+				CC778E8722831B2B00C51EED /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CC778E6F2283184F00C51EED /* Debug */ = {
+		CC778E8B22831B2B00C51EED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		CC778E702283184F00C51EED /* Release */ = {
+		CC778E8C22831B2B00C51EED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +272,7 @@
 			};
 			name = Release;
 		};
-		CC778E722283184F00C51EED /* Debug */ = {
+		CC778E8E22831B2B00C51EED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -290,7 +290,7 @@
 			};
 			name = Debug;
 		};
-		CC778E732283184F00C51EED /* Release */ = {
+		CC778E8F22831B2B00C51EED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -311,25 +311,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC778E5C2283184A00C51EED /* Build configuration list for PBXProject "StudentsManagerMacOSServer" */ = {
+		CC778E7822831B2900C51EED /* Build configuration list for PBXProject "StudentsManagerMacOSServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC778E6F2283184F00C51EED /* Debug */,
-				CC778E702283184F00C51EED /* Release */,
+				CC778E8B22831B2B00C51EED /* Debug */,
+				CC778E8C22831B2B00C51EED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC778E712283184F00C51EED /* Build configuration list for PBXNativeTarget "StudentsManagerMacOSServer" */ = {
+		CC778E8D22831B2B00C51EED /* Build configuration list for PBXNativeTarget "StudentsManagerMacOSServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC778E722283184F00C51EED /* Debug */,
-				CC778E732283184F00C51EED /* Release */,
+				CC778E8E22831B2B00C51EED /* Debug */,
+				CC778E8F22831B2B00C51EED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CC778E592283184A00C51EED /* Project object */;
+	rootObject = CC778E7522831B2900C51EED /* Project object */;
 }
