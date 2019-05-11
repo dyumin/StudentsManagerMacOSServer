@@ -16,7 +16,7 @@ xcuserdata/
 .DS_Store
 .idea
 Pods
-StudentsManager-IOS/GoogleService-Info.plist
+StudentsManagerMacOSServer/GoogleService-Info.plist
 model
 
 ## Various settings
