@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 {
     func applicationDidFinishLaunching(_ aNotification: Notification)
     {
+        ModelApi().call()
+        
         // Insert code here to initialize your application
     }
 

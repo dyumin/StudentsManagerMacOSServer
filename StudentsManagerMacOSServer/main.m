@@ -13,8 +13,8 @@
 
 int main(int argc, const char * argv[])
 {
-    [FIRApp configure];
-    [UsersDataset configure];
+//    [FIRApp configure];
+//    [UsersDataset configure];
     
     
     return NSApplicationMain(argc, argv);

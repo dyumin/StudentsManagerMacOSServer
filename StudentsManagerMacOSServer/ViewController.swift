@@ -22,56 +22,56 @@ class ViewController: NSViewController
     {
         super.viewDidLoad()
         
-        let lostJobsTimer = Observable<Int>.interval(15, scheduler: MainScheduler.instance)
-        
-        let db = Firestore.firestore()
-        
-        Observable.combineLatest(
-        db.collection("processingQueue").whereField(QueueItem.active, isEqualTo: true).rx.listen(),
-        lostJobsTimer).debug("lostJobs worker").subscribe(onNext:
-        { (querySnapshot, _) in
-            
-            querySnapshot.documents.forEach({ (queryDocumentSnapshot) in
-                
-                
-                if let lastUpdateTime = queryDocumentSnapshot.get(QueueItem.lastUpdateTime) as? Timestamp
-                {
-                    let timePassed = Timestamp.init().seconds - lastUpdateTime.seconds
-                    
-                    if timePassed > 60
-                    {
-                        // it is ok, remove sequences will terminate in finite time
-                        _ = queryDocumentSnapshot.reference.rx.updateData(
-                            [QueueItem.active : false,
-                             QueueItem.lastUpdateTime: Timestamp.init()]
-                            ).debug("\(queryDocumentSnapshot.reference.path): set \(QueueItem.active) to false").subscribe()
-                        
-                    }
-                }
-                else
-                {
-                    queryDocumentSnapshot.reference.updateData([QueueItem.lastUpdateTime : Timestamp.init()], completion:
-                    { error in
-                        guard error == nil else { assertionFailure(); return }
-                    })
-                }
-            })
-            
-        }).disposed(by: disposeBag)
-        
-        let workTimer = Observable<Int>.interval(15, scheduler: MainScheduler.instance)
-        Observable.combineLatest(
-            db.collection("processingQueue").whereField(QueueItem.active, isEqualTo: false).rx.listen(),
-            workTimer).debug("worker").subscribe(onNext:
-                { (querySnapshot, _) in
-                    
-                    querySnapshot.documents.forEach({ (queryDocumentSnapshot) in
-                        
-                        // start job, get result
-                        
-                    })
-                    
-            }).disposed(by: disposeBag)
+//        let lostJobsTimer = Observable<Int>.interval(15, scheduler: MainScheduler.instance)
+//        
+//        let db = Firestore.firestore()
+//        
+//        Observable.combineLatest(
+//        db.collection("processingQueue").whereField(QueueItem.active, isEqualTo: true).rx.listen(),
+//        lostJobsTimer).debug("lostJobs worker").subscribe(onNext:
+//        { (querySnapshot, _) in
+//            
+//            querySnapshot.documents.forEach({ (queryDocumentSnapshot) in
+//                
+//                
+//                if let lastUpdateTime = queryDocumentSnapshot.get(QueueItem.lastUpdateTime) as? Timestamp
+//                {
+//                    let timePassed = Timestamp.init().seconds - lastUpdateTime.seconds
+//                    
+//                    if timePassed > 60
+//                    {
+//                        // it is ok, remove sequences will terminate in finite time
+//                        _ = queryDocumentSnapshot.reference.rx.updateData(
+//                            [QueueItem.active : false,
+//                             QueueItem.lastUpdateTime: Timestamp.init()]
+//                            ).debug("\(queryDocumentSnapshot.reference.path): set \(QueueItem.active) to false").subscribe()
+//                        
+//                    }
+//                }
+//                else
+//                {
+//                    queryDocumentSnapshot.reference.updateData([QueueItem.lastUpdateTime : Timestamp.init()], completion:
+//                    { error in
+//                        guard error == nil else { assertionFailure(); return }
+//                    })
+//                }
+//            })
+//            
+//        }).disposed(by: disposeBag)
+//        
+//        let workTimer = Observable<Int>.interval(15, scheduler: MainScheduler.instance)
+//        Observable.combineLatest(
+//            db.collection("processingQueue").whereField(QueueItem.active, isEqualTo: false).rx.listen(),
+//            workTimer).debug("worker").subscribe(onNext:
+//                { (querySnapshot, _) in
+//                    
+//                    querySnapshot.documents.forEach({ (queryDocumentSnapshot) in
+//                        
+//                        // start job, get result
+//                        
+//                    })
+//                    
+//            }).disposed(by: disposeBag)
 
 
     }

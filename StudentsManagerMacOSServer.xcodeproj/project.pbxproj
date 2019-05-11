@@ -27,6 +27,7 @@
 		CC778ED02285C64700C51EED /* QueueWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778ECF2285C64700C51EED /* QueueWatcher.swift */; };
 		CCF3B2A72286F2E300347CEC /* modelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; };
 		CCF3B2A82286F2F800347CEC /* modelAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCF3B2AF2286FB9400347CEC /* ModelApi.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCF3B2AE2286FB9400347CEC /* ModelApi.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,8 @@
 		CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
 		CC778ECF2285C64700C51EED /* QueueWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueWatcher.swift; sourceTree = "<group>"; };
 		CCF3B2A62286F2E300347CEC /* modelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = modelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF3B2AD2286FB9400347CEC /* ModelApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelApi.h; sourceTree = "<group>"; };
+		CCF3B2AE2286FB9400347CEC /* ModelApi.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModelApi.mm; sourceTree = "<group>"; };
 		E06BFA247994B1D8041C55EA /* Pods-StudentsManagerMacOSServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentsManagerMacOSServer.release.xcconfig"; path = "Target Support Files/Pods-StudentsManagerMacOSServer/Pods-StudentsManagerMacOSServer.release.xcconfig"; sourceTree = "<group>"; };
 		F56A57F4DEAFC9A5F5BFAE8A /* Pods_StudentsManagerMacOSServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentsManagerMacOSServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +118,7 @@
 		CC778E7F22831B2900C51EED /* StudentsManagerMacOSServer */ = {
 			isa = PBXGroup;
 			children = (
+				CCF3B2AC2286FB7000347CEC /* ModelApi */,
 				CC778ECB2285ADE800C51EED /* NSFileManager_DirectoryLocations */,
 				CC778EC6228352C200C51EED /* Api */,
 				CC778EB52283486600C51EED /* RxFirebaseFirestore */,
@@ -178,6 +182,15 @@
 				CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */,
 			);
 			path = NSFileManager_DirectoryLocations;
+			sourceTree = "<group>";
+		};
+		CCF3B2AC2286FB7000347CEC /* ModelApi */ = {
+			isa = PBXGroup;
+			children = (
+				CCF3B2AD2286FB9400347CEC /* ModelApi.h */,
+				CCF3B2AE2286FB9400347CEC /* ModelApi.mm */,
+			);
+			path = ModelApi;
 			sourceTree = "<group>";
 		};
 		FDACCA4F17D4583C4100AA56 /* Pods */ = {
@@ -338,6 +351,7 @@
 			files = (
 				CC778EC12283486700C51EED /* FIRDocumentReference+Rx.swift in Sources */,
 				CC778EC32283486700C51EED /* FIRFirestore+Rx.swift in Sources */,
+				CCF3B2AF2286FB9400347CEC /* ModelApi.mm in Sources */,
 				CC778ECE2285ADE800C51EED /* NSFileManager+DirectoryLocations.m in Sources */,
 				CC778E8322831B2900C51EED /* ViewController.swift in Sources */,
 				CC778ED02285C64700C51EED /* QueueWatcher.swift in Sources */,
