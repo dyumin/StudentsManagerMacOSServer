@@ -7,7 +7,7 @@ Bachelor's degree diploma work server
 ```
 git clone https://github.com/dyumin/StudentsManagerMacOSServer --recursive
 ```
-2. Install pods, update submodules and Generate Xcode project for dlib
+2. Install pods, update submodules and Generate Xcode project for modelAPI
 ```
 cd StudentsManagerMacOSServer && pod install && cd tools && ./prebuild.sh
 ```
