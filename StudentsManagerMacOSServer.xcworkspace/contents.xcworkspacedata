@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:model/modelAPI/modelAPI.xcodeproj">
+      location = "group:StudentsManagerMacOSServer.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:StudentsManagerMacOSServer.xcodeproj">
+      location = "group:model/modelAPI/modelAPI.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
