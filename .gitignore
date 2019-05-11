@@ -17,6 +17,7 @@ xcuserdata/
 .idea
 Pods
 StudentsManager-IOS/GoogleService-Info.plist
+model
 
 ## Various settings
 *.pbxuser

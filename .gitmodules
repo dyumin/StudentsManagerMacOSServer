@@ -1,0 +1,3 @@
+[submodule "submodules/modelAPI"]
+	path = submodules/modelAPI
+	url = https://github.com/dmitrySokolof/modelAPI
