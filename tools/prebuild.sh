@@ -20,4 +20,4 @@ if [ ! -d "$MODEL_DIR" ]; then
 fi
 
 cd "$MODEL_DIR"
-cmake -G Xcode "$MODEL_ROOT/modelAPI"
+cmake -DBUILD_FRAMEWORK=true -G Xcode "$MODEL_ROOT/modelAPI"

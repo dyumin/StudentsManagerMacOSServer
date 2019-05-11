@@ -25,7 +25,23 @@
 		CC778ECA2285A80900C51EED /* UsersDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778EC92285A80800C51EED /* UsersDataset.swift */; };
 		CC778ECE2285ADE800C51EED /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */; };
 		CC778ED02285C64700C51EED /* QueueWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778ECF2285C64700C51EED /* QueueWatcher.swift */; };
+		CCF3B2A72286F2E300347CEC /* modelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; };
+		CCF3B2A82286F2F800347CEC /* modelAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CCF3B2A42286F10700347CEC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCF3B2A82286F2F800347CEC /* modelAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9691E346B8316D64BFBD2721 /* Pods-StudentsManagerMacOSServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentsManagerMacOSServer.debug.xcconfig"; path = "Target Support Files/Pods-StudentsManagerMacOSServer/Pods-StudentsManagerMacOSServer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -51,6 +67,7 @@
 		CC778ECC2285ADE800C51EED /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
 		CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
 		CC778ECF2285C64700C51EED /* QueueWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueWatcher.swift; sourceTree = "<group>"; };
+		CCF3B2A62286F2E300347CEC /* modelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = modelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06BFA247994B1D8041C55EA /* Pods-StudentsManagerMacOSServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentsManagerMacOSServer.release.xcconfig"; path = "Target Support Files/Pods-StudentsManagerMacOSServer/Pods-StudentsManagerMacOSServer.release.xcconfig"; sourceTree = "<group>"; };
 		F56A57F4DEAFC9A5F5BFAE8A /* Pods_StudentsManagerMacOSServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentsManagerMacOSServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF3B2A72286F2E300347CEC /* modelAPI.framework in Frameworks */,
 				759C2A3C56DD600DB03B9FAB /* Pods_StudentsManagerMacOSServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +88,7 @@
 		1FD257AC048C84E409E0BD03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCF3B2A62286F2E300347CEC /* modelAPI.framework */,
 				F56A57F4DEAFC9A5F5BFAE8A /* Pods_StudentsManagerMacOSServer.framework */,
 			);
 			name = Frameworks;
@@ -181,6 +200,7 @@
 				CC778E7922831B2900C51EED /* Sources */,
 				CC778E7A22831B2900C51EED /* Frameworks */,
 				CC778E7B22831B2900C51EED /* Resources */,
+				CCF3B2A42286F10700347CEC /* Embed Frameworks */,
 				78841FF47061907740B2F273 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
