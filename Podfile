@@ -20,4 +20,6 @@ target 'StudentsManagerMacOSServer' do
   # pod 'RxFirebaseAuthentication'
   pod 'RxFirebaseStorage' # requires RxSwift 4.0 as of 8.5.19
 
+  pod 'PINCache'
+
 end

@@ -16,6 +16,8 @@ import FirebaseStorage
 
 import RxFirebaseStorage
 
+let DatasetPath = FileManager.default.applicationSupportDirectory()!.appending("/users/dataset")
+
 private func ServerPhotoPath(for id: String) -> String
 {
     return "/users/\(id)/datasetPhotos/\(id).JPG"
@@ -28,28 +30,27 @@ class UsersDataset: NSObject
     
     let ready: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
-    private static var _sharedApi: UsersDataset? = nil
+    private static var _sharedUsersDataset: UsersDataset? = nil
     
     static var sharedUsersDataset: UsersDataset
     {
         get
         {
-            assert(_sharedApi != nil, "sharedUsersDataset called before configure()")
-            return _sharedApi!
+            assert(_sharedUsersDataset != nil, "sharedUsersDataset called before configure()")
+            return _sharedUsersDataset!
         }
     }
     
-    let applicationSupportDirectory = FileManager.default.applicationSupportDirectory()!
     let datasetPath: String
     
     @objc static func configure()
     {
-        _sharedApi = UsersDataset()
+        _sharedUsersDataset = UsersDataset()
     }
     
     private override init()
     {
-        datasetPath = applicationSupportDirectory.appending("/users/dataset")
+        datasetPath = DatasetPath
         
         super.init()
         

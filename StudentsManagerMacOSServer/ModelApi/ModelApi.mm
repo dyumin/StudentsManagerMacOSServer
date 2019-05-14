@@ -13,19 +13,24 @@
 
 @implementation ModelApi
 
-- (void)call
+static const std::string resourcePathStd = [[[NSBundle bundleWithIdentifier:@"com.uuuu.modelAPI"] resourcePath] UTF8String];
+
+- (NSDictionary<NSString*, NSString*>*)callWithImage:(NSURL*)path dataSetPath:(NSURL*)dataSetPath;
 {
-    NSString* resourcePath = [[NSBundle bundleWithIdentifier:@"com.uuuu.modelAPI"] resourcePath];
+    const std::string pathStd = std::string(path.path.UTF8String);
+    const std::string dataSetPathStd = std::string(dataSetPath.path.UTF8String) + "/";
     
-    std::string rPath = [resourcePath UTF8String];
+    const auto results = UUUU::findLabeledFaceRect(pathStd, dataSetPathStd, resourcePathStd);
     
-    std::string template_img_path = "/Users/dyumin/Documents/Diploma/template_dataset/";
-    std::string img3 = "/Users/dyumin/Documents/Diploma/test_group_images/Syomin_Utkin_Derduga.jpg";
-    auto resMap = UUUU::findLabeledFaceRect(img3, template_img_path, rPath);
-    for (std::map< std::string, UUUU::Coords >::iterator i = resMap.begin(); i != resMap.end(); i++)
+    NSMutableDictionary<NSString*, NSString*>* resultObjc = [NSMutableDictionary new];
+    
+    for (const auto& result: results)
     {
-        std::cout << i->first << '\t' << i->second[0] << ' ' << i->second[1] << ' ' << i->second[2] << ' ' <<  i->second[3] << std::endl;
+        NSString* userId = [NSString stringWithUTF8String:result.first.c_str()];
+        resultObjc[userId] = @"";
     }
+    
+    return resultObjc;
 }
 
 @end

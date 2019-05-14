@@ -8,10 +8,14 @@
 
 import Foundation
 
-
+// TODO: share with server sources
 // class representing data structure under processingQueue collection entity
-final class QueueItem
+final class ProcessingQueue
 {
-    static let active = String("processing")
-    static let lastUpdateTime = String("lastUpdateTime")
+    static let imagePath = "imagePath" // String
+    static let session = "session" // DocumentReference
+    static let imageMeta = "imageMeta" // DocumentReference
+    
+    static let active = "processing" // Bool
+    static let lastUpdateTime = "lastUpdateTime" // Timestamp
 }

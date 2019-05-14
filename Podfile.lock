@@ -67,6 +67,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PINCache (2.3)
   - Protobuf (3.7.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - FirebaseFirestore
   - FirebaseFunctions
   - FirebaseStorage
+  - PINCache
   - RxCocoa (~> 4.0)
   - RxFirebaseStorage
   - RxSwift
@@ -103,6 +105,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - PINCache
     - Protobuf
     - RxCocoa
     - RxFirebaseStorage
@@ -123,11 +126,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxFirebaseStorage: 9b8cdab65d20bafeae724a8e40733b92458f2b1a
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 93eaec43e03f6d6ab384f3553248c03452cd556e
+PODFILE CHECKSUM: 0131d8d3173fdec3c81a679e9b0f06b2b5264ab7
 
 COCOAPODS: 1.6.0.beta.2

@@ -24,7 +24,7 @@
 		CC778EC8228352D700C51EED /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778EC7228352D700C51EED /* Types.swift */; };
 		CC778ECA2285A80900C51EED /* UsersDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778EC92285A80800C51EED /* UsersDataset.swift */; };
 		CC778ECE2285ADE800C51EED /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */; };
-		CC778ED02285C64700C51EED /* QueueWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC778ECF2285C64700C51EED /* QueueWatcher.swift */; };
+		CC9BE06F228AE0EC00479F7D /* QueueWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BE06E228AE0EB00479F7D /* QueueWatcher.swift */; };
 		CCF3B2A72286F2E300347CEC /* modelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; };
 		CCF3B2A82286F2F800347CEC /* modelAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCF3B2A62286F2E300347CEC /* modelAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CCF3B2AF2286FB9400347CEC /* ModelApi.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCF3B2AE2286FB9400347CEC /* ModelApi.mm */; };
@@ -67,7 +67,7 @@
 		CC778EC92285A80800C51EED /* UsersDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataset.swift; sourceTree = "<group>"; };
 		CC778ECC2285ADE800C51EED /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
 		CC778ECD2285ADE800C51EED /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
-		CC778ECF2285C64700C51EED /* QueueWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueWatcher.swift; sourceTree = "<group>"; };
+		CC9BE06E228AE0EB00479F7D /* QueueWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueWatcher.swift; sourceTree = "<group>"; };
 		CCF3B2A62286F2E300347CEC /* modelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = modelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF3B2AD2286FB9400347CEC /* ModelApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelApi.h; sourceTree = "<group>"; };
 		CCF3B2AE2286FB9400347CEC /* ModelApi.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModelApi.mm; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				CC778EC7228352D700C51EED /* Types.swift */,
 				CC778EC92285A80800C51EED /* UsersDataset.swift */,
-				CC778ECF2285C64700C51EED /* QueueWatcher.swift */,
+				CC9BE06E228AE0EB00479F7D /* QueueWatcher.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -292,6 +292,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -307,6 +308,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -354,7 +356,6 @@
 				CCF3B2AF2286FB9400347CEC /* ModelApi.mm in Sources */,
 				CC778ECE2285ADE800C51EED /* NSFileManager+DirectoryLocations.m in Sources */,
 				CC778E8322831B2900C51EED /* ViewController.swift in Sources */,
-				CC778ED02285C64700C51EED /* QueueWatcher.swift in Sources */,
 				CC778EC52283486700C51EED /* FIRCollectionReference+Rx.swift in Sources */,
 				CC778EC42283486700C51EED /* FIRQuery+Rx.swift in Sources */,
 				CC778EB4228324D500C51EED /* main.m in Sources */,
@@ -362,6 +363,7 @@
 				CC778EC22283486700C51EED /* FIRWriteBatch+Rx.swift in Sources */,
 				CC778E8122831B2900C51EED /* AppDelegate.swift in Sources */,
 				CC778ECA2285A80900C51EED /* UsersDataset.swift in Sources */,
+				CC9BE06F228AE0EC00479F7D /* QueueWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

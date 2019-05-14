@@ -8,14 +8,34 @@
 
 import Cocoa
 
+import RxSwift
+
 import FirebaseCore
 
 //@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate
 {
+    var worker: QueueWatcher?
+    
+    let disposeBag = DisposeBag()
+    
     func applicationDidFinishLaunching(_ aNotification: Notification)
     {
-        ModelApi().call()
+        UsersDataset.sharedUsersDataset.ready.distinctUntilChanged()
+            .debug("AppDelegate worker")
+            .subscribe(
+            onNext: { [weak self] ready in
+                
+                if ready
+                {
+                    self?.worker = QueueWatcher()
+                }
+                else
+                {
+                    self?.worker = nil
+                }
+                
+            }).disposed(by: disposeBag)
         
         // Insert code here to initialize your application
     }
