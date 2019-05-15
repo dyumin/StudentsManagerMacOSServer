@@ -216,7 +216,7 @@ class QueueWatcher
                 
                 DispatchQueue.global().async
                 { [weak self] in
-                    self?.processDownloadedImage(sessionImageLocalPath: sessionImageLocalPath, session: session, sessionImageLocalDir: sessionImageLocalDir, queryDocumentSnapshot: queryDocumentSnapshot, imageMeta: imageMeta)
+                    self?.processDownloadedImage(sessionImageLocalPath: sessionImageLocalPath, session: session, sessionImageLocalDir: sessionImageLocalDir, queryDocumentSnapshot: queryDocumentSnapshot, imageMeta: imageMeta, imageServerPath: imageServerPath)
                 }
             },
             onError: { [weak self] error in
@@ -229,7 +229,7 @@ class QueueWatcher
         self.mediaObservablesRetainingSubscriptionCache.setObject(bag, forKey: queryDocumentSnapshot.documentID)
     }
     
-    func processDownloadedImage(sessionImageLocalPath: URL, session: DocumentReference, sessionImageLocalDir: URL, queryDocumentSnapshot: QueryDocumentSnapshot, imageMeta: DocumentReference)
+    func processDownloadedImage(sessionImageLocalPath: URL, session: DocumentReference, sessionImageLocalDir: URL, queryDocumentSnapshot: QueryDocumentSnapshot, imageMeta: DocumentReference, imageServerPath: String)
     {
         let db = Firestore.firestore()
         
@@ -246,10 +246,10 @@ class QueueWatcher
             
         }.filter { $0 != nil }.map { $0! }
         
-        self.performBatchedUpdateOnProcessingDone(queryDocumentSnapshot: queryDocumentSnapshot, imageMeta: imageMeta, session: session, results: results, sessionImageLocalDir: sessionImageLocalDir)
+        self.performBatchedUpdateOnProcessingDone(queryDocumentSnapshot: queryDocumentSnapshot, imageMeta: imageMeta, session: session, results: results, sessionImageLocalDir: sessionImageLocalDir, imageServerPath: imageServerPath)
     }
     
-    func performBatchedUpdateOnProcessingDone(queryDocumentSnapshot: QueryDocumentSnapshot, imageMeta: DocumentReference, session: DocumentReference, results: [DocumentReference], sessionImageLocalDir: URL)
+    func performBatchedUpdateOnProcessingDone(queryDocumentSnapshot: QueryDocumentSnapshot, imageMeta: DocumentReference, session: DocumentReference, results: [DocumentReference], sessionImageLocalDir: URL, imageServerPath: String)
     {
         let batch = Firestore.firestore().batch()
         
@@ -268,6 +268,24 @@ class QueueWatcher
             { error in
                 print(error)
                 assertionFailure()
+                
+                let cleanupBatch = Firestore.firestore().batch()
+                
+                cleanupBatch.deleteDocument(queryDocumentSnapshot.reference)
+                cleanupBatch.deleteDocument(imageMeta)
+                
+                _ = cleanupBatch.rx.commit()
+                    .debug("final step for \(queryDocumentSnapshot.documentID), cleanup onError")
+                    .subscribe(
+                    onError:
+                    { error in
+                        print(error)
+                        assertionFailure()
+                    })
+                
+                let storage = Storage.storage()
+                _ = storage.reference(withPath: imageServerPath).rx.delete().debug("final step for \(queryDocumentSnapshot.documentID), cleanup onError, remove \(imageServerPath)").subscribe()
+                
             },
             onDisposed: { [weak self] in
                 self?.cleanup(sessionImageLocalDir: sessionImageLocalDir, queryDocumentSnapshot: queryDocumentSnapshot)
