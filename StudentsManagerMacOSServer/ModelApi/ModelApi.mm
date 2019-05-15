@@ -24,7 +24,7 @@ static const std::string resourcePathStd = [[[NSBundle bundleWithIdentifier:@"co
     
     NSMutableDictionary<NSString*, NSString*>* resultObjc = [NSMutableDictionary new];
     
-    for (const auto& result: results)
+    for (const auto& result: results.first)
     {
         NSString* userId = [NSString stringWithUTF8String:result.first.c_str()];
         resultObjc[userId] = @"";
