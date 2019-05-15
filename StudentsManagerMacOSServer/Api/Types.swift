@@ -8,7 +8,31 @@
 
 import Foundation
 
-// TODO: share with server sources
+// TODO: share with client sources
+// class representing data structure under sessions collection entity
+final class Session
+{
+    static let active = "active"
+    static let host = "host"
+    static let createdBy = "createdBy"
+    static let name = "name"
+    static let room = "room"
+    static let startTime = "startTime"
+    static let participants = "attendees"
+    
+    // Collection
+    static let resources = "resources"
+}
+
+// TODO: share with client sources
+// class representing data structure under Session/resources collection entity
+final class ResourceRecord
+{
+    static let imagePath = "imagePath" // String
+    static let processed = "processed" // Bool
+}
+
+// TODO: share with client sources
 // class representing data structure under processingQueue collection entity
 final class ProcessingQueue
 {

@@ -20,7 +20,7 @@ let DatasetPath = FileManager.default.applicationSupportDirectory()!.appending("
 
 private func ServerPhotoPath(for id: String) -> String
 {
-    return "/users/\(id)/datasetPhotos/\(id).JPG"
+    return "/users/\(id)/datasetPhotos/\(id).jpg"
 }
 
 class UsersDataset: NSObject
@@ -71,9 +71,9 @@ class UsersDataset: NSObject
                 
                 let id = queryDocumentSnapshot.documentID
                 
-                let localDSetPhotoUrl = URL(fileURLWithPath: self.datasetPath.appending("/\(id).JPG"))
+                let localDSetPhotoUrl = URL(fileURLWithPath: self.datasetPath.appending("/\(id).jpg"))
                 
-                if !FileManager.default.fileExists(atPath: localDSetPhotoUrl.absoluteString)
+                if !FileManager.default.fileExists(atPath: localDSetPhotoUrl.path)
                 {
                     let serverPhotoPath = ServerPhotoPath(for: id)
                     let reference = Storage.storage().reference(withPath: serverPhotoPath).rx

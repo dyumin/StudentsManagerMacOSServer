@@ -18,7 +18,7 @@ static const std::string resourcePathStd = [[[NSBundle bundleWithIdentifier:@"co
 - (NSDictionary<NSString*, NSString*>*)callWithImage:(NSURL*)path dataSetPath:(NSURL*)dataSetPath;
 {
     const std::string pathStd = std::string(path.path.UTF8String);
-    const std::string dataSetPathStd = std::string(dataSetPath.path.UTF8String) + "/";
+    const std::string dataSetPathStd = std::string(dataSetPath.path.UTF8String);
     
     const auto results = UUUU::findLabeledFaceRect(pathStd, dataSetPathStd, resourcePathStd);
     
