@@ -25,6 +25,16 @@ final class Session
 }
 
 // TODO: share with client sources
+// class representing data structure under users collection entity
+final class ApiUser
+{
+    static let displayName = "displayName"
+    static let email = "email"
+    static let phone = "phone"
+    static let selectedSession = "selectedSession"
+}
+
+// TODO: share with client sources
 // class representing data structure under Session/resources collection entity
 final class ResourceRecord
 {

@@ -30,6 +30,8 @@ class UsersDataset: NSObject
     
     let ready: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
+    private static let queueName = "\(UsersDataset.self.className()).workers.queue"
+    
     private static var _sharedUsersDataset: UsersDataset? = nil
     
     static var sharedUsersDataset: UsersDataset
@@ -61,7 +63,9 @@ class UsersDataset: NSObject
         
         let db = Firestore.firestore()
         
-        db.collection("users").rx.getDocuments().debug("datasetStartupChecker").subscribe(
+        let allUsers = db.collection("users").order(by: ApiUser.displayName, descending: false).rx.listen()
+        
+        allUsers.debug("datasetStartupChecker").subscribe(
         onNext: { [weak self] event in
             
             event.documents.forEach(
@@ -75,6 +79,8 @@ class UsersDataset: NSObject
                 
                 if !FileManager.default.fileExists(atPath: localDSetPhotoUrl.path)
                 {
+                    self.ready.accept(false)
+                    
                     let serverPhotoPath = ServerPhotoPath(for: id)
                     let reference = Storage.storage().reference(withPath: serverPhotoPath).rx
                     let serverRequestDisposeBag = DisposeBag()
@@ -95,15 +101,22 @@ class UsersDataset: NSObject
                         
                         guard let self = self else { return }
                         
-                        self.workers.removeValue(forKey: id)
-                        
-                        if self.workers.isEmpty
-                        {
-                            self.ready.accept(true)
+                        DispatchQueue(label: UsersDataset.queueName).sync
+                        {  
+                            self.workers.removeValue(forKey: id)
+                            
+                            if self.workers.isEmpty
+                            {
+                                self.ready.accept(true)
+                            }
                         }
                         
                     }).disposed(by: serverRequestDisposeBag)
-                    self.workers[id] = serverRequestDisposeBag
+                    
+                    DispatchQueue(label: UsersDataset.queueName).sync
+                    {
+                        self.workers[id] = serverRequestDisposeBag
+                    }
                 }
             })
             
