@@ -16,6 +16,8 @@ import FirebaseStorage
 
 import RxFirebaseStorage
 
+import CwlUtils
+
 let DatasetPath = FileManager.default.applicationSupportDirectory()!.appending("/users/dataset")
 
 private func ServerPhotoPath(for id: String) -> String
@@ -30,7 +32,7 @@ class UsersDataset: NSObject
     
     let ready: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
-    private static let queueName = "\(UsersDataset.self.className()).workers.queue"
+    let scopedMutex = PThreadMutex()
     
     private static var _sharedUsersDataset: UsersDataset? = nil
     
@@ -101,22 +103,23 @@ class UsersDataset: NSObject
                         
                         guard let self = self else { return }
                         
-                        DispatchQueue(label: UsersDataset.queueName).sync
-                        {  
+                        self.scopedMutex.sync(execute:
+                        {
                             self.workers.removeValue(forKey: id)
                             
                             if self.workers.isEmpty
                             {
                                 self.ready.accept(true)
                             }
-                        }
+                        })
+                        
                         
                     }).disposed(by: serverRequestDisposeBag)
                     
-                    DispatchQueue(label: UsersDataset.queueName).sync
+                    self.scopedMutex.sync(execute:
                     {
                         self.workers[id] = serverRequestDisposeBag
-                    }
+                    })
                 }
             })
             

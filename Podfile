@@ -22,4 +22,6 @@ target 'StudentsManagerMacOSServer' do
 
   pod 'PINCache'
 
+  pod 'CwlUtils', :git => 'https://github.com/mattgallagher/CwlUtils.git'
+
 end

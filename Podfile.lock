@@ -5,6 +5,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - CwlUtils (2.2.0)
   - FirebaseAuth (6.0.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
@@ -90,6 +91,7 @@ PODS:
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
+  - CwlUtils (from `https://github.com/mattgallagher/CwlUtils.git`)
   - FirebaseAuth
   - FirebaseCore
   - FirebaseDatabase
@@ -123,8 +125,18 @@ SPEC REPOS:
     - RxFirebaseStorage
     - RxSwift
 
+EXTERNAL SOURCES:
+  CwlUtils:
+    :git: https://github.com/mattgallagher/CwlUtils.git
+
+CHECKOUT OPTIONS:
+  CwlUtils:
+    :commit: e1384dada38e1a651e3c8b2f4856492fe6108698
+    :git: https://github.com/mattgallagher/CwlUtils.git
+
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  CwlUtils: d36610873fbd40713db03ffa74b1333b45c62bdd
   FirebaseAuth: efc72b0f6fe075d2a6de8d81a6d9de83ef2b47eb
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: e38f025287b413255a53acc1945d048a112047f7
@@ -144,6 +156,6 @@ SPEC CHECKSUMS:
   RxFirebaseStorage: 9b8cdab65d20bafeae724a8e40733b92458f2b1a
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 0131d8d3173fdec3c81a679e9b0f06b2b5264ab7
+PODFILE CHECKSUM: 318a9699d1a11c7e414207db13eda12772dba072
 
 COCOAPODS: 1.6.0.beta.2
